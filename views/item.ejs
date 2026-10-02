@@ -1,0 +1,21 @@
+<%- include("partials/header", { title }) %>
+
+<a class="back-link" href="/">← Назад</a>
+
+<section class="card detail-card">
+  <h1><%= workout.program %></h1>
+  <h2><%= workout.exercise %></h2>
+
+  <dl class="details">
+    <dt>ID</dt><dd><%= workout.id %></dd>
+    <dt>Дата</dt><dd><%= workout.date %></dd>
+    <dt>Вес</dt><dd><%= workout.weight %> кг</dd>
+    <dt>Повторения</dt><dd><%= workout.reps %></dd>
+    <dt>Подходы</dt><dd><%= workout.sets %></dd>
+    <dt>Продолжительность</dt><dd><%= workout.duration %> мин.</dd>
+    <dt>Выполнена</dt><dd><%= workout.completed ? "Да" : "Нет" %></dd>
+    <dt>Заметки</dt><dd><%= workout.notes || "—" %></dd>
+  </dl>
+</section>
+
+<%- include("partials/footer") %>

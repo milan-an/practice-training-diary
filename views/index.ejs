@@ -1,0 +1,40 @@
+<%- include("partials/header", { title }) %>
+
+<section class="page-heading">
+  <div>
+    <h1>Дневник тренировок</h1>
+  </div>
+
+  <a class="button" href="/add">Добавить тренировку</a>
+</section>
+
+<% if (workouts.length === 0) { %>
+  <div class="card">
+    Тренировок пока нет.
+  </div>
+<% } %>
+
+<div class="grid">
+  <% workouts.forEach(workout => { %>
+    <article class="card">
+      <div class="card-top">
+        <strong><%= workout.program %></strong>
+        <span><%= workout.date %></span>
+      </div>
+
+      <h2><%= workout.exercise %></h2>
+
+      <p>
+        <%= workout.weight %> кг ·
+        <%= workout.reps %> повторений ·
+        <%= workout.sets %> подходов
+      </p>
+
+      <a href="/item/<%= workout.id %>">
+        Подробнее
+      </a>
+    </article>
+  <% }) %>
+</div>
+
+<%- include("partials/footer") %>

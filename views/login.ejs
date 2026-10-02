@@ -1,0 +1,54 @@
+<%- include("partials/header", { title }) %>
+
+<section class="card center-card">
+
+  <h1>Вход</h1>
+
+  <p>
+    Войдите, чтобы получить доступ к добавлению тренировок.
+  </p>
+
+  <% if (error) { %>
+    <div class="error-box">
+      <%= error %>
+    </div>
+  <% } %>
+
+  <form
+    class="form"
+    method="POST"
+    action="/login"
+  >
+
+    <label>
+      Email
+      <input
+        type="email"
+        name="email"
+        placeholder="user@example.com"
+        required
+      >
+    </label>
+
+    <label>
+      Пароль
+      <input
+        type="password"
+        name="password"
+        placeholder="Введите пароль"
+        required
+      >
+    </label>
+
+    <button
+      class="button"
+      type="submit"
+    >
+      Войти
+    </button>
+
+  </form>
+
+</section>
+
+<%- include("partials/footer") %>
